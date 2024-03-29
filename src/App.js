@@ -1,9 +1,16 @@
 import ModalWnd from "./components/Modal/ModalWnd";
+import { useState } from "react";
 
 function App() {
+  const [modalState, setModalState] = useState(false);
+
+
   return (
     <div className="App">
-      <ModalWnd />
+      <ModalWnd call={ modalState } />
+      <button onClick={() => setModalState(true)}>
+        Modal Window
+      </button>
     </div>
   );
 }
